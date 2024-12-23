@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriChain SCM</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600&display=swap');
+        :root {
+            --green: #65b741;
+            --black: #333;
+            --white: #fff;
+        }
+        * {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: all .2s linear;
+        }
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+        /* website all heading */
+        .heading {
+            margin: 2rem;
+            padding-top: 6rem;
+            text-decoration: underline;
+            text-align:center;
+            display: flex;
+            font-size: 3.5rem;
+            color: var(--green);
+            position: relative;
+            letter-spacing: .2rem;
+            
+        }
+        /* website all button */
+        .btn {
+            outline: none;
+            border: none;
+            border-radius: 5rem;
+            background-color: var(--green);
+            color: var(--white);
+            cursor: pointer;
+            height: 3.5rem;
+            width: 15rem;
+            font-size: 1.7rem;
+            box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
+        }
+        .btn:hover {
+            letter-spacing: .1rem;
+            opacity: .8;
+        }
+        /* heading section start */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 2rem 8rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+        .header .logo {
+            font-size: 2.5rem;
+            color: var(--white);
+        }
+        .header .logo i {
+            padding: 0.5rem;
+        }
+        .header .navbar ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .header .navbar ul li {
+            margin: 0 1.5rem;
+        }
+        .header .navbar ul li a {
+            font-size: 2rem;
+            color: var(--white);
+        }
+        .header .fa-bars {
+            color: var(--white);
+            cursor: pointer;
+            font-size: 3rem;
+            display: none;
+        }
+/* heading ends*/
+/*home section starts*/
+        .home {
+            min-height: 100vh;
+            width: 100vw;
+            background-image: url(bck_img_a.jpg);
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+            text-align: center;
+            padding: 0 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .home .banner {
+            color: var(--white);
+            font-size: 5rem;
+            text-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+        }
+        .home .slogan {
+            color: var(--white);
+            font-size: 2.5rem;
+            font-weight: 400;
+        }
+        .home button {
+            height: 4rem;
+            width: 18rem;
+            border-radius: .5rem;
+            background-color: var(--white);
+            color: var(--black);
+            cursor: pointer;
+            border: none;
+            outline: none;
+            margin-top: 1rem;
+            font-size: 2rem;
+            font-weight: 400;
+            box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+        }
+        .home button:hover {
+            letter-spacing: .1rem;
+            color: var(--white);
+            background-color: var(--green);
+
+        }
+/* home section ends*/
+
+/* media querry start */
+        @media (max-width: 768px) {
+            html {
+                font-size: 50%;
+            }
+            .header .fa-bars {
+                display: block;
+            }
+            .header .navbar {
+                position: fixed;
+                top: -120%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                z-index: 1000;
+                transition: top 0.3s ease-in-out;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            .header .navbar ul {
+                padding: 0;
+                margin: 0;
+                flex-direction: column;
+                align-items: center;
+            }
+            .header .navbar ul li {
+                margin: 1rem 0;
+            }
+            .header .navbar ul li a {
+                font-size: 2.5rem;
+                color: var(--black);
+            }
+            .header .nav-toggle {
+                top: 5.8rem;
+            }
+      .home .banner{
+font-size:4rem;
+}
+.home .slogan{
+font-size:1.7rem;
+}
+/* about media querry*/
+.about .row{
+flex-flow: column-reverse;
+padding: 0 2rem;
+}
+.about .row .images img{
+width:100vw;
+padding:4rem;
+}
+/*service media querry*/
+.service .row{
+flex-flow:column-reverse;
+padding: 0 2rem;
+}
+.service .row:nth-child(even){
+flex-flow:column;
+}
+.service .row .content{
+flex-flow:column-reverse;
+padding:4rem;
+}
+.service .row .images img{
+width:75vw;
+padding:0;
+}
+/* contact us media query*/
+.contact .row{
+flex-flow:column;
+}
+.contact .row .images img{
+border-radius: 2.5rem;
+width:100vw;
+padding: 1rem;
+}
+.contact .row .form-container{
+width:100%;
+padding: 0 1.5rem;
+}
+/*FAQ media query start*/
+.faq{
+padding: 0;
+}
+.faq .row{
+padding: 0 1rem;
+flex-flow: column;
+}
+.faq .row .images img{
+width: 100vw;
+border-radius: 1rem;
+padding: 1rem;
+}
+.faq .row .subject-container{
+width: 100vw;
+}
+/*media querry end */
+}
+
+
+/*footer query start */
+@media (max-width:550px){
+.footer{
+flex-flow:column;
+}
+.footer h1{
+text-align:center;
+}
+.footer .icons{
+padding:2rem 0;
+}
+}
+/*footer query end*/
+        /* about section css */
+       .about {
+    min-height: 100vh;
+    width: 100vw;
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    position: relative;
+    overflow: hidden;
+}
+.about .row{
+display:flex;
+align-items:center;
+justify-content:space-around;
+padding:0 4rem;
+}
+.about .row .content{
+text-align:left;
+padding: 4rem;
+}
+.about .row .content h2{
+font-size:3rem;
+color:var(--green);
+}
+.about .row .content p{
+font-size:1.5rem;
+color:var(--black);
+padding: 1rem 0;
+}
+/* about image css*/
+.about .row .images img{
+width:50vw;
+border-radius: 2rem;
+}
+/* about background circle*/
+.about::after, .about::before{
+content:"";
+position:absolute;
+z-index: -1;
+opacity: .2;
+border-radius:50%;
+}
+/* circle top left*/
+.about::after{
+height:60rem;
+width:60rem;
+background-color:var(--green);
+top: -10rem;
+right: -10rem;
+}
+/* circle bottom left*/
+.about::before{
+height: 60rem;
+width:60rem;
+background-color:var(--green);
+bottom:-10rem;
+left:-10rem;
+}
+/* about  section ends*/
+
+/* our services css */
+ .service {
+    min-height: 100vh;
+    width: 100vw;
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    position: relative;
+    overflow: hidden;
+}
+.service .row{
+display:flex;
+align-items:center;
+justify-content:space-around;
+padding:0 4rem;
+}
+.service .row .content{
+text-align:left;
+border-radius:1rem;
+padding: 4rem;
+}
+/* service heading and text*/
+.service .row .content h2{
+font-size:3rem;
+color:var(--green);
+}
+.service .row .content p{
+font-size:1.5rem;
+color:var(--black);
+padding: 1rem 0;
+}
+/* service image css*/
+.service .row .images img{
+width:50vw;
+border-radius: 50%;
+border: 4px solid var(--green);
+}
+
+/* our services end*/
+/* teams*/
+.team{
+width:100vw;
+text-align:center;
+background-color:var(--green);
+box-shadow": "0 .3rem .5rem rgba(0, 0, 0, .3);
+}
+.team .row .card:hover {
+  transform: scale(1.05);
+}
+
+/*team image*/
+.team .row .card .images img{
+height:24rem;
+width:25rem;
+border-radius:.5rem;
+border:.5rem solid var(--white);
+box-shadow:0 0 .5rem rgba(0,0,0,.3);
+object-fit:cover;
+}
+/* team card*/
+.team .row{
+display:flex;
+align-items:center;
+justify-content:center;
+flex-wrap:wrap;
+}
+.team .row .card{
+height:35rem;
+width:25rem;
+background-color:var(--white);
+text-align:center;
+margin:7rem 2rem;
+position:relative;
+overflow:hidden;
+border-radius:.5rem;
+}
+.team .row .card .info h2{
+font-size:2rem;
+color:var(--green);
+}
+.team .row .card .info p{
+font-size:1.8rem;
+color:var(--black);
+}
+.team .row .card .info .icons a{
+font-size:2rem;
+padding:0 1rem;
+margin-top:1rem; 
+color:var(--black);
+}
+.team .row .card .info .icons a:hover{
+color:var(--green);
+}
+/* team heading*/
+.team .heading{
+color:var(--white);
+}
+/*team end*/
+
+/* Contact Us CSS */
+.contact{
+wiidth:100vw;
+text-align: center;
+}
+.contact .row{
+display: flex;
+align-item: center;
+justify-content: center;
+margin: 2rem 2rem;
+padding:0 2rem;
+}
+/* contact images*/
+.contact .row .images img{
+height:35rem;
+width:50rem;
+border-radius:1rem;
+}
+.contact .row .form-container{
+width:50%;
+text-align:left;
+padding:0 2rem;
+}
+/* contact message area*/
+.contact .row .form-container input, textarea{
+outline:none;
+border:none;
+width:49rem;
+height:4rem;
+background:none;
+border-radius: .5rem;
+box-shadow:.2rem .2rem  .5rem rgba(0,0,0,.3);
+padding: 0 1rem;
+margin:1rem 0;
+font-size:1.6rem;
+
+}
+
+.contact .row .form-container .inputbox{
+width:100%;
+display:flex;
+justify-content:space-between;
+}
+/* name css*/
+.contact .row .form-container .inputbox input[type="text"]{
+width:49%;
+}
+/* email css */
+.contact .row .form-container input[type="email"]{
+width:100%;
+}
+/* text area css*/
+.contact .row .form-container textarea{
+width:100%;
+height:20rem;
+padding:1rem;
+resize:none;
+}
+/* contact send btn*/
+.contact .row .form-container input[type="submit"]{
+background-color:var(--green);
+color:var(--white);
+cursor:pointer;
+height:4rem;
+width:10rem;
+}
+.contact .row .form-container input[type="submit"]:hover{
+opacity: .8;
+}
+
+/* Contact Us End */
+
+/*FAQ section*/
+.faq{
+min-height: 100vh;
+width: 100vw;
+text-align:center;
+padding:0 2rem;
+}
+.faq .heading{
+margin:0;
+}
+.faq .row{
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 0 2rem;
+}
+/*faq image*/
+.faq .row .images img{
+height: 40vh;
+width: 35vw;
+border-radius: 1rem;
+}
+
+.faq .row .subject-container{
+width:50%;
+text-align:left;
+}
+.faq .row .subject-container .subject .subject-header{
+background-color:var(--green);
+margin: 1rem 0;
+box-shadow: .1rem .1rem .3rem rgba(0,0,0,.3);
+cursor:pointer;
+}
+.faq .row .subject-container .subject .subject-header span{
+display: inline-block;
+text-align: center;
+height: 4rem;
+width: 5rem;
+line-height: 4rem;
+font-size: 2rem;
+background-color: var(--white);
+color: var(--black);
+clip-path: polygon(0% 0%, 75% 0%,100% 50%, 75% 100%,0% 100%);
+}
+.faq .row .subject-container .subject .subject-header h2{
+display:inline;
+color:var(--white);
+font-weight: 400;
+font-size: 1.5rem;
+padding: 1.5rem;
+}
+.faq .row .subject-container .subject .subject-body{
+padding: 1rem;
+color:var(--black);
+box-shadow:.1rem .1rem .3rem rgba(0,0,0,.3);
+font-size:1.3rem;
+display:none;
+}
+/*FAQ end*/
+
+/* Footer css*/
+.footer{
+width:100%;
+display: flex;
+align-items: center;
+justify-content:space-around;
+padding: 2rem 2rem;
+margin-top:1rem;
+background-color:var(--green);
+}
+.footer h1{
+color:var(--white);
+font-size: 2rem;
+font-weight:400;
+letter-spacing: .1rem;
+}
+.footer .icons a{
+font-size: 2rem;
+color:var(--white);
+padding: 0 1rem;
+
+}
+    </style>
+    <script>
+        $(document).ready(function() {
+    $(".fa-bars").click(function() {
+        $(this).toggleClass("fa-times");
+        $(".navbar").toggleClass("nav-toggle");
+    });
+
+    $(window).on("scroll", function() {
+        $(".fa-bars").removeClass("fa-times");
+        $(".navbar").removeClass("nav-toggle");
+
+        if ($(window).scrollTop() > 30) {
+            $(".header").css({
+                "background": "#65b741",
+                "box-shadow": "0 .3rem .5rem rgba(0, 0, 0, .3)"
+            });
+        } else {
+            $(".header").css({
+                "background": "none",
+                "box-shadow": "none"
+            });
+        }
+    });
+
+    // FAQ function
+    $(".subject-header").click(function() {
+        $(".subject .subject-body").slideUp();
+        $(this).next(".subject-body").slideDown();
+        $(".subject .subject-header span").text("+")
+        $(this).children("span").text("-")
+    });
+});
+
+    </script>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-seedling"></i>AgriBridge.</a>
+        <div class="fas fa-bars"></div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#faq">FAQ's</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="home">
+        <h1 class="banner">AgriBridge Solutions</h1>
+        <h2 class="slogan">Connecting Farms to Markets, Seamlessly.</h2>
+        <a href="login.html"><button>Get Started</button></a>
+    </section>
+    <!--- About Section --->
+    <section id="aboutus">
+    <section id="about" class="about">
+    
+        <h1 class="heading" style="text-align:center;">About Us</h1>
+<br><br><br>
+        <div class="row">
+            <div class="content">
+                <h2>Make Farming Easy With Us</h2>
+                <p>Welcome to AgriBridge Solutions, your trusted partner in revolutionizing agriculture through innovative supply chain management...</p>
+                <a href="about us.html"><button class="btn">Read More</button></a>
+            </div>
+<!---about images--->
+<div class="images">
+<img src="about1.png" alt="about us image">
+        </div>
+    </section>
+</div>
+<!---about section ends--->
+
+<!---Our services--->
+<section id="service">
+<section id="services" class="service">
+    <!--heading-->
+    <h1 class="heading">Our Services</h1>
+<br><br><br>
+    <!-- Seeds Service -->
+    <div class="row">
+        <div class="images">
+            <img src="seed.jpg" alt="seed image">
+        </div>
+        <div class="content">
+            <h2>We Provide Best Quality Seeds</h2>
+            <p>At AgriBridge, we believe that every successful harvest starts with superior-quality seeds...</p>
+            <a href="buying.html#seed"><button class="btn">Order Now</button></a>
+        </div>
+    </div>
+    
+    <!-- Fertilizer Service -->
+    <div class="row">
+        
+        <div class="content">
+            <h2>Plant Nutrition Perfected</h2>
+            <p>We offer high-quality fertilizers designed to enrich soil and boost crop health...</p>
+            <a href="buying.html#fertilizer"><button class="btn">Order Now</button></a>
+        </div>
+<div class="images">
+            <img src="fertilizer.jpg" alt="fertilizer image">
+        </div>
+    </div>
+    
+
+    <!-- Transportation Service -->
+    <section id="transport">
+    <div class="row">
+        <div class="images">
+            <img src="harvester.jpg" alt="harvester image">
+        </div>
+        <div class="content">
+            <h2>Connecting Farm to Market</h2>
+            <p>We bridge the gap between farms and markets, empowering farmers and ensuring fair opportunities...</p>
+            <a href="transportation.html"><button class="btn">Book Now</button></a>
+        </div>
+    </div>
+    </section>
+
+    <!-- Financial Solutions -->
+    <section id="finance">
+    <div class="row">
+       
+        <div class="content">
+            <h2>Empowering Agriculture with Financial Solutions</h2>
+            <p>We understand the financial challenges faced by farmers and provide tailored solutions...</p>
+            <a href="finance1.html"><button class="btn">Read More</button></a>
+        </div>
+ <div class="images">
+            <img src="finance.jpg" alt="finance image">
+        </div>
+    </div>
+    </section>
+</section>
+</section>
+<!---service section end-->
+<!--team section-->
+<section id="team" class="team">
+<!--team heading--->
+<h1 class="heading">Our Team</h1>
+<div class="row">
+<!---card-->
+<div class="card">
+<!---card image--->
+<div class="images">
+<img src="sumit.jpg" alt="sumit kumar hota">
+</div>
+<!--card info-->
+<div class="info">
+<h2>Sumit Kumar Hota</h2>
+
+<!--card icons--->
+<div class="icons">
+<a href="#" class="fab fa-facebook-f"></a>
+<a href="#" class="fab fa-twitter"></a>
+<a href="#" class="fab fa-instagram"></a>
+</div>
+</div>
+</div>
+<!--card end-->
+<!---card start-->
+<div class="card">
+<!---card image--->
+<div class="images">
+<img src="AANCHAL.jpg" alt="aanchal sreeraj nair">
+</div>
+<!--card info-->
+<div class="info">
+<h2>Aanchal Sreeraj Nair</h2>
+
+<!--card icons--->
+<div class="icons">
+<a href="#" class="fab fa-facebook-f"></a>
+<a href="#" class="fab fa-twitter"></a>
+<a href="#" class="fab fa-instagram"></a>
+</div>
+</div>
+</div>
+<!--card end-->
+<!---card start-->
+<div class="card">
+<!---card image--->
+<div class="images">
+<img src="AHAB.jpg" alt="ahab anwer">
+</div>
+<!--card info-->
+<div class="info">
+<h2>Ahab Anwer</h2>
+
+<!--card icons--->
+<div class="icons">
+<a href="#" class="fab fa-facebook-f"></a>
+<a href="#" class="fab fa-twitter"></a>
+<a href="#" class="fab fa-instagram"></a>
+</div>
+</div>
+</div>
+<!--card end-->
+<!---card-->
+<div class="card">
+<!---card image--->
+<div class="images">
+<img src="RISHI.jpg" alt="ayush sahoo">
+</div>
+<!--card info-->
+<div class="info">
+<h2>Ayush Kumar Sahoo</h2>
+<!--card icons--->
+<div class="icons">
+<a href="#" class="fab fa-facebook-f"></a>
+<a href="#" class="fab fa-twitter"></a>
+<a href="#" class="fab fa-instagram"></a>
+</div>
+</div>
+</div>
+<!--card end-->
+</div>
+</section>
+<!---form section start---->
+<section id="contact" class="contact">
+<!--form heading--->
+<h1 class="heading">Contact Us</h1>
+<br><br><br>
+<div class="row">
+<!--form image--->
+<div class="images">
+<img src="contact us.jpg" alt="contact">
+</div>
+<div class="form-container">
+<form action="">
+<!--form name-->
+<div class="inputbox">
+<input type="text" placeholder=" First Name" name="" id="">
+<input type="text" placeholder=" Last Name" name="" id="">
+</div>
+<!---from email-->
+<input type="email" placeholder="Enter Your Email ID" name="" id="">
+<textarea name="" palceholder="Message" id="" cols="30" rows="10"></textarea>
+<!--button-->
+<input type="submit" value="send">
+
+</form>
+</div>
+</div>
+</section>
+<br><br><br>
+<!---form section end--->
+
+<!---faq section starts---->
+<section id="faq" class="faq">
+<!---faq heading---->
+<h1 class="heading">FAQ</h1>
+<br><br><br><br><br><br>
+<div class="row">
+<!---faq images---->
+<div class="images">
+<img src="crop1.jpg" alt="crop">
+</div>
+<div class="subject-container">
+<!--faq start-->
+<div class="subject">
+<!--faq question-->
+<div class="subject-header">
+<span>+</span>
+<h2>What is Agribridge, and what services do you provide?</h2>
+</div>
+<!---faq ans--->
+<div class="subject-body">
+<p>Agribridge is a comprehensive platform dedicated to empowering farmers and agricultural businesses. We offer a wide range of agriculture supplies such as seeds, fertilizers, and equipment, along with financial services like loans, insurance, and investment guidance to support the farming community.</p>
+</div>
+</div>
+<!--faq end-->
+<!--faq start-->
+<div class="subject">
+<!--faq question-->
+<div class="subject-header">
+<span>+</span>
+<h2>Can I get customized advice for my farming needs?</h2>
+</div>
+<!---faq ans--->
+<div class="subject-body">
+<p>Absolutely! Agribridge offers personalized consultations to help farmers with crop selection, supply recommendations, and financial planning. Our expert team ensures that you receive advice tailored to your specific agricultural goals.</p>
+</div>
+</div>
+<!--faq end-->
+<!--faq start-->
+<div class="subject">
+<!--faq question-->
+<div class="subject-header">
+<span>+</span>
+<h2>What financial services does We offer?</h2>
+</div>
+<!---faq ans--->
+<div class="subject-body">
+<p>We provide tailored financial solutions, including:-
+Agricultural loans to help you purchase equipment and expand operations.;
+Insurance for crop protection against unforeseen events.;
+Investment opportunities to grow your agricultural business.</p>
+</div>
+</div>
+<!--faq end-->
+<!--faq start-->
+<div class="subject">
+<!--faq question-->
+<div class="subject-header">
+<span>+</span>
+<h2>How can I apply for a loan through Agribridge?</h2>
+</div>
+<!---faq ans--->
+<div class="subject-body">
+<p>Applying for a loan is simple and hassle-free:-
+Visit our website or app and navigate to the "Financial Services" section.;
+Select the type of loan you need and fill out the application form.;
+Submit the required documents, such as ID proof, land records, and income details.</p>
+</div>
+</div>
+<!--faq end-->
+<!--faq start-->
+<div class="subject">
+<!--faq question-->
+<div class="subject-header">
+<span>+</span>
+<h2>Does Agribridge provide support for small and marginal farmers?</h2>
+</div>
+<!---faq ans--->
+<div class="subject-body">
+<p>Yes, Agribridge is committed to supporting small and marginal farmers. We offer affordable supplies, low-interest loans, and dedicated assistance programs to help you overcome challenges and achieve sustainable growth.</p>
+</div>
+</div>
+<!--faq end-->
+<!--faq start-->
+<div class="subject">
+<!--faq question-->
+<div class="subject-header">
+<span>+</span>
+<h2>What types of seeds does Agribridge offer?</h2>
+</div>
+<!---faq ans--->
+<div class="subject-body">
+<p>Agribridge provides a wide variety of high-quality seeds, including:-
+Hybrid seeds for maximum yield.;
+Organic seeds for sustainable farming.;
+Region-specific seeds tailored to different climates and soil types.;</p>
+</div>
+</div>
+<!--faq end-->
+</div>
+</div>
+</div>
+</section>
+<!----faq section ends--->
+<!----footer section start--->
+<section class="footer">
+<h1>Created by | CSW Group C | All Right Reserved </h1>
+<!--footer icons-->
+<div class="icons">
+<a href="#" class="fab fa-facebook-f"></a>
+<a href="#" class="fab fa-twitter"></a>
+<a href="#" class="fab fa-instagram"></a>
+</div>
+</section>
+<!----footer section end--->
+
+
+
+</body>
+</html>
