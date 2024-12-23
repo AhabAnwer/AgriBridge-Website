@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply for a Loan</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <style>
+    /* Styling for the body */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      padding-top: 80px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: url("crop.jpeg") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Styling for the form container */
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Navbar styling */
+    .navbar {
+      background-color: #65b741; 
+      position: fixed;
+      top: 0; 
+      width: 100%;
+      z-index: 1000;
+      padding: 15px;
+    }
+    .navbar-brand, .nav-link {
+      color: white; 
+    }
+    .navbar-brand:hover, .nav-link:hover {
+      color: #f8f9fa; 
+    }
+
+    /* Footer styling */
+    .footer {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 1rem;
+      background-color: #65b741;
+      color: white;
+      font-size: 1rem;
+      margin-top: auto;
+    }
+    .footer .icons a {
+      font-size: 1.5rem;
+      color: white;
+      padding: 0 1rem;
+    }
+  </style>
+  <script>
+    // Function to handle form submission
+    document.addEventListener("DOMContentLoaded", function() {
+      const loanForm = document.getElementById("loan-form");
+      loanForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form from submitting normally
+        alert("Your form has been successfully registered!"); // Show success message
+      });
+    });
+  </script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="fas fa-seedling"></i> Agribridge</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="finance1.html">Home</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br><br>
+
+  <!-- Apply for Loan Section -->
+  <div class="container" id="apply">
+    <h2 class="text-center mb-4" style="color:#65b741">Apply for a Loan</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="form-container">
+          <form id="loan-form">
+            <div class="mb-3">
+              <label for="applicantName" class="form-label">Name</label>
+              <input type="text" class="form-control" id="applicantName" placeholder="Enter Your Name" required>
+            </div>
+            <div class="mb-3">
+              <label for="contact" class="form-label">Contact</label>
+              <input type="tel" class="form-control" id="contact" placeholder="Enter Contact Number" required>
+            </div>
+            <div class="mb-3">
+              <label for="loanPurpose" class="form-label">Purpose of Loan</label>
+              <input type="text" class="form-control" id="loanPurpose" placeholder="Enter Loan Purpose" required>
+            </div>
+            <div class="mb-3">
+              <label for="loanAmount" class="form-label">Loan Amount (₹)</label>
+              <input type="number" class="form-control" id="loanAmount" placeholder="Enter Loan Amount" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Submit Application</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <h4>Created by | CSW Group C | All Rights Reserved</h4>
+    <div class="icons">
+      <a href="#" class="fab fa-facebook-f"></a>
+      <a href="#" class="fab fa-twitter"></a>
+      <a href="#" class="fab fa-instagram"></a>
+    </div>
+  </footer>
+</body>
+</html>
+
