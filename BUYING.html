@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agribridge - Buy Seeds and Fertilizers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+<script>
+  //button click alert section 
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll(".btn-buy").forEach(function(button) {
+      button.addEventListener("click", function() {
+        alert("Item added to cart!");
+      });
+    });
+  });
+</script>
+
+  <style>
+ /* CSS for styling the website */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f8f9fa;
+      background: url("bck-3-1.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+ /* navbar css */
+    .navbar {
+      background-color: #65b741; 
+      position: sticky;
+      top: 0; 
+      z-index: 1000; 
+      padding: 15px;
+    }
+    .navbar-brand, .nav-link {
+      color: white; 
+    }
+    .navbar-brand:hover, .nav-link:hover {
+      color: #f8f9fa; 
+    }
+  
+    .container {
+      margin-top: 50px;
+    }
+   /* product card css */
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      background-color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .product-card img {
+      max-width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .product-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    .product-price {
+      color: #28a745;
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+   /* button css */
+    .btn-buy {
+      margin-top: 15px;
+      background-color: #65b741;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      width: 100%;
+      cursor: pointer;
+    }
+    .btn-buy:hover {
+      background-color: #218838;
+    }
+    .container .col .product-card:hover {
+      transform: scale(1.05);
+    }
+  /* footer css */
+    .footer{
+width:100%;
+display: flex;
+align-items: center;
+justify-content:space-around;
+padding: 1rem 1rem;
+margin-top:1rem;
+background-color:#65b741;
+}
+.footer h3{
+color:white;
+font-size: 1.5rem;
+font-weight:400;
+letter-spacing: .1rem;
+}
+.footer .icons a{
+font-size: 1.5rem;
+color:white;
+padding: 0 1rem;
+
+}
+/* css for website working in mobile */
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .product-card {
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="fas fa-seedling" style="font-size:20px"></i> Agribridge</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa fa-shopping-cart" style="font-size:24px"></i> Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#service" style="font-size:20px">Home</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!--navbar section end -->
+<!--seeds product container-->
+ <section id="seed">
+  <div class="container">
+    <h2 class="text-center my-5" style="color:white">Buy Seeds</h2>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      <!-- Product Cards for Seeds -->
+      <div class="col">
+        <div class="product-card">
+          <img src="tomato.jpg" alt="Tomato Seeds">
+          <h5 class="product-name">Tomato Seeds</h5>
+          <p class="product-description">High-quality tomato seeds for healthy growth.(5KG)</p>
+          <p class="product-price"><del>₹549.00</del> ₹424.11</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="carrot.jpg" alt="Carrot Seeds">
+          <h5 class="product-name">Carrot Seeds</h5>
+          <p class="product-description">Premium carrot seeds for rich harvests.(5KG)</p>
+          <p class="product-price">₹296.87</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="letuce.jpg" alt="Lettuce Seeds">
+          <h5 class="product-name">Lettuce Seeds</h5>
+          <p class="product-description">Fast-growing lettuce seeds for your garden.(2KG)</p>
+          <p class="product-price"><del>₹300.00</del> ₹233.26</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="pepper.jpg" alt="Pepper Seeds">
+          <h5 class="product-name">Pepper Seeds</h5>
+          <p class="product-description">Fresh pepper seeds for your kitchen garden.(2KG)</p>
+          <p class="product-price">₹339.29</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="cucumber.jpg" alt="Cucumber Seeds">
+          <h5 class="product-name">Cucumber Seeds</h5>
+          <p class="product-description">Cucumber seeds for a cool, fresh harvest.(5KG)</p>
+          <p class="product-price"><del>₹390.00</del> ₹254.46</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="spinach.jpg" alt="Spinach Seeds">
+          <h5 class="product-name">Spinach Seeds</h5>
+          <p class="product-description">Nutrient-rich spinach seeds for your garden.(2KG)</p>
+          <p class="product-price">₹212.05</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="onion.jpg" alt="Onion Seeds">
+          <h5 class="product-name">Onion Seeds</h5>
+          <p class="product-description">High-quality onion seeds for a great yield.(5KG)</p>
+          <p class="product-price"><del>₹400.00</del> ₹254.46</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="garlic.jpg" alt="Garlic Seeds">
+          <h5 class="product-name">Garlic Seeds</h5>
+          <p class="product-description">Premium garlic seeds for your garden yield.(5KG)</p>
+          <p class="product-price">₹381.70</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="chilli.jpg" alt="Chili Seeds">
+          <h5 class="product-name">Chili Seeds</h5>
+          <p class="product-description">Spicy green chili seeds for your hot harvests.(2KG)</p>
+          <p class="product-price">₹322.32</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="watermelon.jpg" alt="Watermelon Seeds">
+          <h5 class="product-name">Watermelon Seeds</h5>
+          <p class="product-description">Sweet watermelon seeds for a juicy harvest.(5KG)</p>
+          <p class="product-price"><del>₹600.00</del> ₹509.00</p>
+          <button class=" btn-buy">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Seed section end-->
+  <!-- Fertilizers Section -->
+<section id="fertilizer">
+  <div class="container">
+    <h2 class="text-center my-5" style="color:white">Buy Fertilizers</h2>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      <!-- Product Cards for Fertilizers -->
+      <div class="col">
+        <div class="product-card">
+          <img src="organic.jpg" alt="Organic Fertilizer">
+          <h5 class="product-name">Organic Fertilizer</h5>
+          <p class="product-description">Natural fertilizer for healthy plants and environment.(10KG)</p>
+          <p class="product-price">₹424.00</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="nitrogen.jpg" alt="Nitrogen Fertilizer">
+          <h5 class="product-name">Nitrogen Fertilizer</h5>
+          <p class="product-description">Boosts growth and green foliage for your farm.(10KG)</p>
+          <p class="product-price">₹508.00</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="phosphorus.jpg" alt="Phosphorus Fertilizer">
+          <h5 class="product-name">Phosphorus Fertilizer</h5>
+          <p class="product-description">Enhances root development and flowering.(5KG)</p>
+          <p class="product-price"><del>₹500.00</del> ₹339.00</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="potash.jpg" alt="Potassium Fertilizer">
+          <h5 class="product-name">Potassium Fertilizer</h5>
+          <p class="product-description">Improves overall plant health and resistance.(5KG)</p>
+          <p class="product-price">₹430.00</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="vermi.jpg" alt="Compost Fertilizer">
+          <h5 class="product-name">Compost Fertilizer</h5>
+          <p class="product-description">Rich in organic nutrients, perfect for all plants.(10KG)</p>
+          <p class="product-price"><del>₹450.00</del> ₹350.00</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="liquid.jpg" alt="Liquid Fertilizer">
+          <h5 class="product-name">Liquid Fertilizer</h5>
+          <p class="product-description">Quick absorption for fast results on harvest.(10KG)</p>
+          <p class="product-price">₹400.00</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="plleted.jpg" alt="Plleted Fertilizer">
+          <h5 class="product-name">Plleted Fertilizer</h5>
+          <p class="product-description">Provides nutrients over an extended period.(5KG)</p>
+          <p class="product-price"><del>₹800.00</del> ₹605.00</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="granular.jpeg" alt="Granular Fertilizer">
+          <h5 class="product-name">Granular Fertilizer</h5>
+          <p class="product-description">Easy to apply, great for all types of plants.(10KG)</p>
+          <p class="product-price">₹250.00</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="herb.jpg" alt=" Herb Fertilizer">
+          <h5 class="product-name">Herb Fertilizer</h5>
+          <p class="product-description">Specially formulated for herbs and spices.(5KG)</p>
+          <p class="product-price">₹309.00</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card">
+          <img src="flower.jpg" alt="Flower Fertilizer">
+          <h5 class="product-name">Flower Fertilizer</h5>
+          <p class="product-description">Enhances blooming and vibrant colors.(5KG)</p>
+          <p class="product-price">₹425.00
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--- fertilizer section end-->
+<br><br><br>
+<!----footer section start--->
+<section class="footer">
+<h3>Created by | CSW Group C | All Right Reserved </h3>
+<!--footer icons-->
+<div class="icons">
+<a href="#" class="fab fa-facebook-f"></a>
+<a href="#" class="fab fa-twitter"></a>
+<a href="#" class="fab fa-instagram"></a>
+</div>
+</section>
+<!----footer section end--->
+</body>
+</html>
